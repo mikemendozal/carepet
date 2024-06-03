@@ -23,7 +23,7 @@
             "outputPath": "dist/FRONTEND",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -35,8 +35,8 @@
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-  "node_modules/@popperjs/core/dist/umd/popper.min.js",
-  "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/@popperjs/core/dist/umd/popper.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ],
             "vendorChunk": true,
             "extractLicenses": false,
@@ -74,23 +74,23 @@
               ]
             }
           },
-          "defaultConfiguration": ""
+          "defaultConfiguration": "production"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "FRONTEND:build"
+            "buildTarget": "FRONTEND:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "FRONTEND:build:production"
+              "buildTarget": "FRONTEND:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "FRONTEND:build"
+            "buildTarget": "FRONTEND:build"
           }
         },
         "test": {
@@ -111,15 +111,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
             ]
           }
         },
