@@ -1,0 +1,25 @@
+<div class="deliv rounded border border-secondary mx-2 my-2" *ngFor="let service of services">
+    <b><h5 class="mx-2 my-2">{{service.serviceName}}</h5></b>
+    <hr>
+    <br>
+    <ul>
+        <li> <strong>Descripción: </strong>{{service.serviceDescription}}</li>
+        <li><strong>Estado: </strong> {{service.serviceState}}</li>  
+        <br/> 
+        <form (submit)="addCalification(txtCalificacion)">
+            <div class="input-group mb-3">
+                <input class="form-control " type="number" placeholder="Calificacion" #txtCalificacion min="0" max="5">
+                <button type="button" class="btn btn-primary">
+                    Calificar
+                 </button>
+              </div>
+        </form>
+        <hr>
+        <pre>Rate: <b>{{service.serviceQualification}}</b></pre>
+    </ul>
+    <div class="container">
+        <button class="btn btn-light btnEnviar" (click)="Gservices(service)">Gestionar Servicio</button>
+    </div>
+</div>
+
+

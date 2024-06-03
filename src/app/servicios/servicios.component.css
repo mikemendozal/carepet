@@ -1,0 +1,19 @@
+@font-face {
+    font-family: ProductSans-Regular;
+    src: url(../../assets/font/ProductSans-Regular.ttf) format("opentype");
+  }
+
+p{
+    font-family: 'ProductSans-Regular', sans-serif;
+    text-align: justify;
+}
+
+.figure-img{
+    border-top-left-radius: 400px 250px !important;
+    border-top-right-radius: 200px 150px !important;
+    border-bottom-left-radius: 300px 200px !important;
+    border-bottom-right-radius: 400px 340px !important;
+    width: 380px;
+    height: 260px;
+}
+

@@ -1,0 +1,44 @@
+  <!-- sidebar -->
+  <div class="bg-dark border-right p-3" id="sidebar">
+    <h3 class="text-light">Veterinaria</h3>
+    <hr class="text-white">
+  
+    <a *ngIf="rol == '2'"  [routerLink]="['/AdminService']" >Servicios</a>
+    <br>
+    <a *ngIf="rol == '2'" [routerLink]="['/AdminProduct']"  >Productos</a>
+    <br>
+    <a *ngIf="rol == '1'" [routerLink]="['/AdminUser']">Usuario</a>
+    <br>
+    <a [routerLink]="['/Delivery']" >Tienda <i class="bi bi-bag-check-fill"></i></a>
+    <br>    
+    <a *ngIf="rol == '2'" [routerLink]="['/registerUser']" >Registrar Usuarios</a>
+    <br>
+    <a *ngIf="rol == '1'" [routerLink]="['/pet']" >Mascotas</a>
+    <br>
+    <a  [routerLink]="['/adminAppointment']" >Citas <i class="bi bi-calendar-fill"></i></a>
+    <br>
+    <a *ngIf="rol == '1'" [routerLink]="['/EstadoMascota']" >Estado mascota</a>
+    <br>
+    <a  *ngIf="rol == '2'" [routerLink]="['/AutorizarCita']" >Autorizar citas</a>
+    <br>
+    <a  *ngIf="rol == '1'"  [routerLink]="['/EstadoCita']" >Estado citas</a>
+    <br>
+    <a   *ngIf="rol == '2'" [routerLink]="['/TopVendidos']" >Top 10  mas vendidos</a>
+    <br>
+    <a [routerLink]="['/UserService']" style="visibility:hidden ;">Servicios</a>
+    <br>
+    <br>
+    <br>
+    <button class="btn btn-light" (click)="salir()">Cerrar Sesión</button>
+  </div>  
+
+
+    
+  
+ 
+ 
+  
+  
+  
+   
+   

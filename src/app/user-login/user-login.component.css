@@ -1,0 +1,51 @@
+h2{
+    text-align: center;
+}
+
+a{
+    text-decoration: none;
+}
+
+.container{
+    background-image: url("../../assets/img/inicio.jpeg");
+    background-color: #cccccc;
+    height: 530px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-top: -13px ;
+    
+
+}
+
+.container .imgBackground{
+   position: absolute;
+}
+
+div.container div.row div.col-md-8 div.boxPrincipal{
+   margin-right: 60px;
+}
+
+div.container{
+    max-width: 100% !important;
+}
+
+.bg-white{
+    border-radius: 8px;
+    opacity: 0.9;
+
+}
+
+div.container div.row div div.boxPrincipal div form div label{
+    color: #525252;
+}
+
+div.container div.row div div.boxPrincipal div form div input:valid{
+    border: 1px solid #7ed957;
+    
+}
+
+div.container div.row div div.boxPrincipal div form div p{
+    text-align: center;
+}

@@ -1,0 +1,74 @@
+ <div class="boxPrincipal">
+    <div class="container-fluid">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Registrar Servicio
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form  id="form1">
+                            <input class="form-control my-2" type="text" placeholder="Id" #txtid style="visibility: hidden;">
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="tex" placeholder="Nombre" #txtNombre>
+                                <label for="floatingInput">Nombre</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control my-2" type="text"  cols="10" rows="1" placeholder="Descripcion" #txtDescripcion></textarea>
+                                <label for="floatingInput">Descripcion</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="number" placeholder="Precio" min="0" max="10" #txtPrecio>
+                                <label for="floatingInput">Precio</label>
+                            </div>
+                            <select class="form-select" aria-label=".form-select-lg" #btnMetodo>
+                                <option selected style="color:#5c656f !important;">Seleccione el estado</option>
+                                <option *ngFor="let item of stateService" [value]="item.stateId" >{{item.state}}</option>
+                            </select>
+               
+                        <br/>
+                        
+                            <button class="btn btn-dark mx-2" type="submit" (click)="guardar()" #btnGuardar>Guardar</button>
+                            <button class="btn btn-success mx-2 btnvi"  type="submit"#btnActualizar (click)="actualizar()">Actualizar</button>
+                            <button class="btn btn-danger mx-2" type="submit" #btnCancelar (click)="cancelar()">Cancelar</button>
+                            <button class="btn btn-danger mx-2 btnvi" type="submit" #btnEliminar (click)="eliminar()">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th># Servicio</th>
+                    <th>Descripcion</th>
+                    <th>Estado</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Calificación</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let service of getService">
+                    <td><button class="btn btn-primary" (click)="elegir(service)">seleccionar</button></td>
+                    <td>{{service.serviceId}}</td>
+                    <td>{{service.serviceDescription}}</td>
+                    <td>{{service.serviceState}}</td>
+                    <td>{{service.serviceName}}</td>
+                    <td>{{service.servicePrice}}</td>
+                    <td>{{service.serviceQualification}}</td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+ </div>   
+

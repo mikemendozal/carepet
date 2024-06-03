@@ -1,0 +1,18 @@
+<div class="boxPrincipal">
+    
+    <form  id="form1">
+            <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+            <h2 class="display-6 center"> Consulta Tu Mascota</h2>
+        
+            <div class="input-group">     
+                <input class="form-control" type="text" placeholder="Numero cita" #txtNombre>
+                <button class="btn btn-dark" type="submit" (click)="validar()" #btnGuardar>Consultar</button>
+            </div>
+    
+    </form>
+
+    <br>
+    <label > Estado Mascota: </label>
+    <br>
+    <label ><b>{{estado}}</b></label>    
+</div>

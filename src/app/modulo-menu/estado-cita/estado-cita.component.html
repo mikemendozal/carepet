@@ -1,0 +1,27 @@
+<div class="boxPrincipal">
+    <h2 class="display-6 center"> Estado Citas</h2>
+    <form  id="form1">
+        <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+        <!-- <input class="form-control my-2" type="text" placeholder="id de la cita" #txtNombre> -->
+        <button class="btn btn-dark mx-2" type="submit" (click)="validar()" #btnGuardar>Filtrar</button>
+    </form>
+    <br>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                
+                    <th>ID Cita</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let estado of listTop">
+                    <td>{{estado.id}}</td>
+                    <td>{{estado.estado}}</td>
+            
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

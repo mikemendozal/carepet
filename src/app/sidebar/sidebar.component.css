@@ -1,0 +1,21 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+a{
+    text-decoration: none;
+    color:white;
+    margin-top: 25px !important;
+}
+
+a:hover{
+    color: #cacaca;
+}
+
+i{
+    font-style: normal;
+}
+
+#sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 20px;
+}

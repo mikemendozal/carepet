@@ -1,0 +1,10 @@
+@font-face {
+    font-family: ProductSans-Regular;
+    src: url(../assets/font/ProductSans-Regular.ttf) format("opentype");
+  }
+
+*{
+    font-family: 'ProductSans-Regular', sans-serif;
+}
+
+

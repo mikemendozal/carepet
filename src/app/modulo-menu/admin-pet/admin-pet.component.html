@@ -1,0 +1,88 @@
+<div class="boxPrincipal">
+    <div class="container-fluid">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Registrar Mascota
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form  id="form1">
+                            <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="text" placeholder="Nombre" #txtNombre>
+                                <label for="floatingInput">Nombre</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="number" placeholder="Peso" min="0" #txtPeso>
+                                <label for="floatingInput">Peso</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="text" placeholder="Raza" #txtRaza>
+                                <label for="floatingInput">Raza</label>
+                            </div>
+
+                            <select class="form-select" aria-label=".form-select-lg" #txtCategoria>
+                                <option selected >Seleccione categoria</option>
+                                <option value="Perros">Perros</option>
+                                <option value="Gatos">Gatos</option>
+                                <option value="Caballos">Caballos</option>
+                                <option value="Conejos">Conejos</option>
+                                <option value="Ardillas">Ardillas</option>
+                                <option value="Hamsters">Hámsters</option>
+                                <option value="Canarios">Canarios</option>
+                                <option value="Peces">Peces</option>
+                                <option value="Aves">Aves</option>
+                                <option value="Lobos">Lobos</option>
+                                <option value="Reptiles">Reptiles</option>
+                                <option value="Cerdos">Cerdos</option>
+                            </select>
+                            <div class="form-floating mb-3">    
+                                <input class="form-control my-2" type="number" placeholder="Edad" min="0" #txtEdad>
+                                <label for="floatingInput">Edad</label>
+                            </div>
+                            
+                            <br/>
+
+                            <button class="btn btn-dark mx-2" type="submit" (click)="guardar()" #btnGuardar>Guardar</button>
+                            <button class="btn btn-success mx-2 btnvi"  type="submit"#btnActualizar (click)="actualizar()">Actualizar</button>
+                            <button class="btn btn-danger mx-2" type="submit" #btnCancelar (click)="cancelar()">Cancelar</button>
+                            <button class="btn btn-danger mx-2 btnvi" type="submit" #btnEliminar (click)="eliminar()">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th>ID Product</th>
+                    <th>Descripcion</th>
+                    <th>Nombre</th>
+                    <th>Raza</th>
+                    <th>Categoria</th>
+                    <th>Edad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pet of getPet">
+                    <td><button class="btn btn-primary" (click)="elegir(pet)">seleccionar</button></td>
+                    <td>{{pet.petId}}</td>
+                    <td>{{pet.petWeight}}</td>
+                    <td>{{pet.petName}}</td>
+                    <td>{{pet.petBreed}}</td>
+                    <td>{{pet.petCategory}}</td>
+                    <td>{{pet.petAge}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+ </div>   

@@ -1,0 +1,9 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
+.boxPrincipal{
+    width: 90%;
+}
+
+#formCitas{
+    margin-top: -50px;
+}

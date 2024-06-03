@@ -1,0 +1,74 @@
+<div class="boxPrincipal">
+    <div class="container-fluid">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Registrar Cita
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form  id="formCitas">
+                            <input class="form-control my-2" type="text" placeholder="Id" #txtid style="visibility: hidden;">
+                            <div class="input-group flex-nowrap">
+                                <input class="form-control" type="date" id="dateAppointment" placeholder="Fecha Cita" aria-describedby="addon-wrapping" #datefecha>
+                                <label class="input-group-text" for="dateAppointment" id="addon-wrapping"><i class="bi bi-calendar3"></i></label>
+                            </div>
+
+                            <br>
+                        
+                            <select class="form-select" aria-label=".form-select-lg" #btnpet>
+                                <option selected style="color:#5c656f !important;">seleccione una mascota</option>
+                                <option *ngFor="let item of getPet" [value]="item.petId" >{{item.petName}}</option>
+                            </select>
+                        
+                            <br>
+                            <select class="form-select" aria-label=".form-select-lg" #btnservice>
+                                <option selected style="color:#5c656f !important;">seleccione un servicio</option>
+                                <option *ngFor="let item of getService" [value]="item.serviceId" >{{item.serviceName}}</option>
+                            </select>
+                         
+                            <br>
+                            <br>
+                            <br>
+                        
+                            <button class="btn btn-dark mx-2" type="submit" (click)="guardar()" #btnGuardar>Guardar</button>
+                            <button class="btn btn-success mx-2 btnvi"  type="submit"#btnActualizar (click)="actualizar()">Actualizar</button>
+                            <button class="btn btn-danger mx-2" type="submit" #btnCancelar (click)="cancelar()">Cancelar</button>
+                            <button class="btn btn-danger mx-2 btnvi" type="submit" #btnEliminar (click)="eliminar()">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th># Cita</th>
+                    <th>Fecha Asignada</th>
+                    <th>Mascota</th>
+                    <th>Servicio</th>
+                    <th>Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of getAppointment">
+                    <td><button class="btn btn-primary" (click)="elegir(item)">seleccionar</button></td>
+                    <td>{{item.appointmentid}}</td>
+                    <td>{{item.appointmentDate}}</td>
+                    <td>{{item.petId.petName}}</td>
+                    <td>{{item.serviceId.serviceName}}</td>
+                    <td>{{item.appointmentUser.personName}}</td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+ </div>   

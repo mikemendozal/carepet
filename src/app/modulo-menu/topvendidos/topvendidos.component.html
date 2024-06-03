@@ -1,0 +1,37 @@
+<form  id="form1">
+    <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+    <!-- <input class="form-control my-2" type="text" placeholder="id de la cita" #txtNombre> -->
+    
+   <br>
+
+  
+    <button class="btn btn-dark mx-2" type="submit" (click)="validar()" #btnGuardar>Filtrar</button>
+</form>
+
+
+<br>
+<br>
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+               
+                <th>ID Product</th>
+                <th>Descripcion</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Calificacion</th>
+                <th>cantidad</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let product of listTop">
+                <td>{{product.productId}}</td>
+                <td>{{product.productDescription}}</td>
+                <td>{{product.productName}}</td>
+                <td>{{product.productPrice}}</td>
+                <td>{{product.productQualication}}</td>
+                <td>{{product.cantidad}}</td>
+            </tr>
+        </tbody>
+    </table>

@@ -1,0 +1,21 @@
+<div class="boxPrincipal">
+    <div class="p-3 border bg-light">
+        <h2 class="display-6"> Actualizar Datos</h2>
+        <form (ngSubmit)="ActualizarUsuario()" id="registroUsuario">
+
+            <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+            <label>Cedula</label><input class="form-control my-2" type="text" #txtCedula required>
+            <label>Nombre</label><input class="form-control my-2" type="text"  #txtNombre required>
+            <label>Edad</label><input class="form-control my-2" type="number" #txtEdad min=0 max=120>
+            <label>Telefono</label><input class="form-control my-2" type="tel"  #txtTelefono required>
+            <label>Email</label><input class="form-control my-2" type="email" placeholder="ejemplo@email.com" #txtEmail required>
+            <label>Password</label><input class="form-control my-2" type="password" #txtPassword required>
+            
+            <br>
+            <div class="d-grid gap-1">
+                <button class="btn btn-primary mx-2" type="submit" #btnGuardar>Actualizar</button>
+            </div>
+        </form>
+    </div>
+ </div>   
+

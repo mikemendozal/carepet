@@ -1,0 +1,70 @@
+<div class="boxPrincipal">
+    <div class="container-fluid">
+        <div class="accordion" id="accordionPanelsStayOpenExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                    Registrar Producto
+                  </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <div class="accordion-body">
+                        <form id="form1">
+                            <input class="form-control my-2" type="number" placeholder="Id" #txtid style="visibility: hidden;">
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="text" placeholder="Nombre" #txtNombre>
+                                <label for="floatingInput">Nombre</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <textarea class="form-control my-2" type="text"  cols="10" rows="1" placeholder="Descripcion" #txtDescripcion></textarea>
+                                <label for="floatingInput">Descripcion</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="number" placeholder="Precio" #txtPrecio>
+                                <label for="floatingInput">Precio</label>
+                            </div>
+                            <div class="form-floating mb-3">
+                                <input class="form-control my-2" type="number" placeholder="Calificacion" max="10" min="0" #txtCalificacion>
+                                <label for="floatingInput">Calificacion</label>
+                            </div>
+                            <br/>
+
+                        
+                            <button class="btn btn-dark mx-2" type="submit" (click)="guardar()" #btnGuardar>Guardar</button>
+                            <button class="btn btn-success mx-2 btnvi"  type="submit"#btnActualizar (click)="actualizar()">Actualizar</button>
+                            <button class="btn btn-danger mx-2" type="submit" #btnCancelar (click)="cancelar()">Cancelar</button>
+                            <button class="btn btn-danger mx-2 btnvi" type="submit" #btnEliminar (click)="eliminar()">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th>ID Product</th>
+                    <th>Descripcion</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Calificacion</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let product of getProduct">
+                    <td><button class="btn btn-primary" (click)="elegir(product)">seleccionar</button></td>
+                    <td>{{product.productId}}</td>
+                    <td>{{product.productDescription}}</td>
+                    <td>{{product.productName}}</td>
+                    <td>{{product.productPrice}}</td>
+                    <td>{{product.productQualication}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+ </div>   

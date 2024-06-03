@@ -1,0 +1,11 @@
+.boxPrincipal{
+    width: 90%;
+}
+
+#form1{
+    margin-top: -50px;
+}
+
+#form1 label{
+    color: #525252;
+}

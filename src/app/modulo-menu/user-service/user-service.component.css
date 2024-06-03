@@ -1,0 +1,39 @@
+.deliv{
+    display: inline-table;
+    width: 22em;
+    background-color: rgba(0,0,0,.125);
+    padding: 8px;
+    padding-bottom: 15px;
+
+}
+
+ul{
+    margin-top: -20px;
+    text-decoration: none;
+    list-style: none;
+    
+    
+}
+li{
+    color:#343a40;
+}
+
+h5{
+    color: #343a40;
+    text-align: center;
+}
+hr{
+    color: #343a40;
+}
+
+input{
+    width: 290px;
+}
+
+button
+{
+    display: flex;
+    justify-content: center;
+    margin-left:20px;
+}
+

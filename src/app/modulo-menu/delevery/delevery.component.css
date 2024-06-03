@@ -1,0 +1,35 @@
+.deliv{
+    display: inline-table;
+    width: 22em;
+    height: inherit;
+    background-color: rgb(29, 29, 29);
+}
+
+ul{
+    text-decoration: none;
+    list-style: none;
+}
+.row{
+    display: grid;
+    grid-template-columns: repeat(4, 2fr);
+    grid-template-rows: 440px 440px 440px;
+}
+
+.card{
+    padding: 0px;
+}
+
+.card-header{
+    text-align: center;
+}
+
+.card-header label{
+    color:white; 
+    text-transform: uppercase;
+    
+}
+
+hr{
+    color: white;
+}
+

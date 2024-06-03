@@ -1,0 +1,80 @@
+<div class="boxPrincipal">
+    <div class="container">
+        <form  id="formCitas">
+            <input class="form-control my-2" type="text" placeholder="Id" #txtid style="visibility: hidden;">
+            <!-- <input class="form-control my-2" type="date" placeholder="Fecha Cita" #datefecha> -->
+           
+            <!-- <br>
+            <div class="dropdown" >
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMetodoPago" data-bs-toggle="dropdown" aria-expanded="true">
+                  seleccione un servicio
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMetodoPago">
+                  <li *ngFor="let item of getService"><button class="dropdown-item" type="button" #btnservice (click)="valorservice(item.serviceId)">{{item.serviceName}}</button></li>
+                </ul>
+            </div> 
+            <br> -->
+           
+
+             <!-- <div class="dropdown" >
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMetodoPago" data-bs-toggle="dropdown" aria-expanded="true">
+                  seleccione una mascota 
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMetodoPago">
+                  <li *ngFor="let item of getPet"><button class="dropdown-item" type="button" #btnpet (click)="valorPet(item.petId)">{{item.petName}}</button></li>
+                </ul>
+            </div> -->
+
+             <!-- <select class="form-select" aria-label=".form-select-lg" >
+                    <option selected style="color:#5c656f !important;">Seleccione su mascota</option>
+                  <option *ngFor="let item of pets" value="valor(item.petId)" #selectPet>{{item.pet}}</option> 
+            </select>
+
+            <select class="form-select" aria-label=".form-select-lg" >
+                <option selected style="color:#5c656f !important;">Seleccione su servicio</option>
+                 <option *ngFor="let item of services" value="valor(item.serviceId)" #selectService>{{item.service}}</option> 
+            </select>
+
+            <select class="form-select" aria-label=".form-select-lg" >
+                <option selected style="color:#5c656f !important;">Seleccione cliente</option>
+                 <option *ngFor="let item of clients" value="valor(item.clientId)" #selectUser>{{item.client}}</option> 
+            </select>  -->
+          
+            <!-- <button class="btn btn-dark mx-2" type="submit" (click)="guardar()" #btnGuardar>Guardar</button>
+            <button class="btn btn-success mx-2 btnvi"  type="submit"#btnActualizar (click)="actualizar()">Actualizar</button>
+            <button class="btn btn-danger mx-2" type="submit" #btnCancelar (click)="cancelar()">Cancelar</button>
+            <button class="btn btn-danger mx-2 btnvi" type="submit" #btnEliminar (click)="eliminar()">Eliminar</button> -->
+        </form>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div>
+        <h2 class="display-6 center"> Citas</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Seleccion</th>
+                    <th> </th>
+                    <th>Numero Cita</th>
+                    <th>Fecha Asignada</th>
+                    <th>Mascota</th>
+                    <th>Servicio</th>
+                    <th>Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of getAppointment">
+                    <td><button class="btn btn-success" (click)="autorizar(item)">Autorizar</button></td>
+                    <td><button class="btn btn-danger" (click)="negar(item)">Rechazar</button></td>
+                    <td>{{item.appointmentid}}</td>
+                    <td>{{item.appointmentDate}}</td>
+                    <td>{{item.petId.petName}}</td>
+                    <td>{{item.serviceId.serviceName}}</td>
+                    <td>{{item.appointmentUser.personName}}</td>
+                </tr>
+              
+            </tbody>
+        </table>
+    </div>
+ </div>   

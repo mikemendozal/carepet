@@ -1,0 +1,86 @@
+<div class="container-fluid">
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          Productos
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          <div class="row" >
+            <div class="card" style="width: 18rem;" *ngFor="let product of getProduct" >
+              <div class="card-header bg-dark" > 
+                <label><b>{{product.productName}} </b></label>
+              </div>
+              <div class="card-body ">
+                  <p> <b>Id: </b>{{product.productId}} </p>
+                  <p> <b>Precio: </b>{{product.productPrice}} </p>
+                  <p> <b>Descripcion: </b> {{product.productDescription}} </p>   
+                  <p> <b>Calificacion: </b> </p>   
+                  <div class="input-group">     
+                    <input class="form-control" type="number" placeholder="Calificacion"  [(ngModel)]="qualificationProduct" #txtCalificacionP>
+                    <button class="btn btn-dark" type="submit" (click)="validarCalProduct(product)" #btnGuardarCalProduct>Calificar</button> <!-- (click)="validarCalProduct()"-->
+                  </div>  
+                  <br/>
+                  <div class="form-floating">      
+                    <select class="form-select" id="floatingSelect" aria-label=".form-select-lg" [(ngModel)]="deepId" #btnMetodo>
+                      <option>Seleccione metodo de pago</option>
+                      <option *ngFor="let item of stateDeliverys" [value]="item.stateDeliveryId" >{{item.stateDeliveryDescription}}</option>
+                    </select>
+                    <label for="floatingSelect">Método de pago</label>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary mt-4 " (click)="ventaProduct(product)">Gestionar Venta</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  <div class="accordion" id="accordionPanelsStayOpenExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+          Servicios
+        </button>
+      </h2>
+      <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+        <div class="accordion-body">
+          <div class="row">
+            <div class="card" style="width: 18rem; " *ngFor="let service of getService">
+              <div class="card-header bg-dark" > 
+                <label><b>{{service.serviceName}} </b></label>
+              </div>
+              <div class="card-body " >
+                  <p> <b>Precio: </b>{{service.servicePrice}} </p>
+                  <p> <b>Descripcion: </b> {{service.serviceDescription}} </p>   
+                  <p> <b>Calificacion </b> </p>   
+                  <div class="input-group">     
+                    <input class="form-control" type="number" placeholder="Calificacion" [(ngModel)]="qualificationService" #txtCalificacionS>
+                    <button class="btn btn-dark" type="submit" (click)="validarCalService(service)" #btnGuardarCalService>Calificar</button>
+                  </div>  
+                  <br>
+                  <p><b>Estado: </b>{{service.serviceState}}</p>
+                  <div class="form-floating">      
+                    <select class="form-select" id="floatingSelect" aria-label=".form-select-lg" [(ngModel)]="deepId" #btnMetodo>
+                      <option selected style="color:#5c656f !important;">Seleccione metodo de pago</option>
+                      <option *ngFor="let item of stateDeliverys" [value]="item.stateDeliveryId" >{{item.stateDeliveryDescription}}</option>
+                    </select>
+                    <label for="floatingSelect">Método de pago</label>
+                  </div>
+                  <div class="d-grid gap-2">
+                    <button class="btn btn-primary mt-4 " (click)="ventaService(service)">Gestionar Venta</button>
+                  </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

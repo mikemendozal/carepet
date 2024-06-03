@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+        
+        </div>
+        <div class="col-md-8">
+            <div class="boxPrincipal">
+                <br>
+                <br>
+                <div class="p-3 border bg-white">
+                    <h2 class="display-6"> Bienvenido</h2>
+                    <br/>
+                    <form (ngSubmit)="iniciarSesion()" id="login" ngNativeValidate>
+                        <div class="form-floating mb-3">
+                            <input class="correo form-control my-2" type="email" id="usuario" required placeholder="Usuario" #txtUsuario>
+                            <label for="floatingInput">Usuario</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control my-2" type="password" required placeholder="Contraseña" #txtPassword>
+                            <label for="floatingInput">Contraseña</label>
+                        </div>
+
+                        <div class="d-grid gap-1">
+                            <button class="btn btn-success mx-2" type="submit" #btnGuardar>Ingresar</button>
+                        </div>
+                        <hr class="text-black">
+                        <div class="d-grid gap-1">
+                            <p>¿No tienes una cuenta? <a [routerLink]="['/registerUser']">Regístrate</a> </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="boxPrincipal">
+    <div class="p-3 border bg-light">
+        <h2 class="display-6"> Registro Usuario</h2>
+        <br/>
+        <form (ngSubmit)="guardarUsuario()" id="registroUsuario">
+
+            <label>Cedula</label><input class="form-control my-2" type="number"  #txtCedula required>
+            <label>Nombre</label><input class="form-control my-2" type="text"  #txtNombre required>
+            <label>Edad</label><input class="form-control my-2" type="number" #txtEdad min=0 max=120>
+            <label>Telefono</label><input class="form-control my-2" type="number"  #txtTelefono required>
+            <label>Email</label><input class="form-control my-2" type="email" placeholder="ejemplo@email.com" #txtEmail required>
+            <label>Password</label><input class="form-control my-2" type="password" #txtPassword required>
+            
+            <br>
+            <div class="d-grid gap-1">
+                <button class="btn btn-success mx-2" type="submit" #btnGuardar>Guardar</button>
+            </div>
+        </form>
+    </div>
+ </div>   

@@ -1,0 +1,19 @@
+
+<body>
+    <div *ngIf="validar == '1' else box">
+        <div class="d-flex">
+            <app-sidebar></app-sidebar>
+            <div class="p-2 w-100 flex-shrink-1 bd-highligh">
+                <router-outlet ></router-outlet>
+            </div>
+          </div> 
+    </div> 
+    <ng-template #box>
+        <div class="d-flex flex-column bd-highlight mb-3">
+            <div class="p-6 bd-highlight"><app-topbar></app-topbar></div>
+            <div class="p-6 bd-highlight"><p></p></div>
+            <div class="bd-highlight"><router-outlet></router-outlet></div>
+        </div>
+    </ng-template>
+</body>
+
